@@ -60,7 +60,7 @@ t = Thread.new(&progress)
 
 list = []
 
-`find #{ARGV[2..(-1)].join(' ')} -type f`.each_line{|l|
+`find "#{ARGV[2..(-1)].join(' ')}" -type f`.each_line{|l|
 	unless (i = l.index("$")).nil?
 		l = "#{l[0,i]}\\#{l[i,l.length]}"
 	end
